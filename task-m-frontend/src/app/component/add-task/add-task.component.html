@@ -1,0 +1,36 @@
+<form [formGroup]="taskForm" (ngSubmit)="SubmitTask()">
+  <h1 mat-dialog-title>{{inputdata.title}}</h1>
+  
+  <!-- task form -->
+  <div mat-dialog-content>
+    <mat-form-field>
+      <mat-label>Add Title</mat-label>
+      <input formControlName="title" matInput required>
+    </mat-form-field>
+    
+    <mat-form-field>
+      <mat-label>Select Priority</mat-label>
+      <mat-select formControlName="priority">
+          <mat-option value="Low">Low</mat-option>
+          <mat-option value="Medium">Medium</mat-option>
+          <mat-option value="High">High</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Choose a date</mat-label>
+      <input formControlName="dueDate" matInput [matDatepicker]="picker" required>
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    
+    <div>
+      <mat-checkbox formControlName="completed">Is Active</mat-checkbox>
+     </div>
+  </div>
+
+  <div mat-dialog-actions>
+      <button mat-raised-button type="submit" color="primary" >Add Task</button>
+    <a (click)="closepopup()" mat-raised-button color="warn">Close</a>
+  </div>
+</form>

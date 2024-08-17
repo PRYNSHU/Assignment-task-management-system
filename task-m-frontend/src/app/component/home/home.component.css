@@ -1,0 +1,7 @@
+.centered-title {
+    text-align: center; 
+    vertical-align: middle;
+    font-size: 2rem;
+    margin: 20px 10px;
+    color: blueviolet;
+}
